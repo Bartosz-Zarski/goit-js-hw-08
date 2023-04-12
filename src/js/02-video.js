@@ -21,7 +21,7 @@ if(time != null) {
     player.setCurrentTime(time);
 }
 
-player.on('pause', function() {
+player.on('timeupdate', function() {
     player.getCurrentTime().then(function(seconds) {
         localStorage.setItem('videoProgress', seconds);
     });
