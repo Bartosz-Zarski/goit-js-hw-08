@@ -12,7 +12,7 @@ function addInputToLocalStorage() {
   localStorage.setItem('feedback-form-state', JSON.stringify(feedback));
 }
 
-const throttledInputHandler = _.throttle(addInputToLocalStorage, 500)
+const throttledInputHandler = throttle(addInputToLocalStorage, 500)
 
 formEl.addEventListener('input', throttledInputHandler);
 
@@ -33,7 +33,7 @@ window.addEventListener('load', function () {
 });
 
 function removeFromStorage() {
-  event.preventDefault()
+  // event.preventDefault()
   console.log(localStorage.getItem('feedback-form-state'))
   localStorage.removeItem('feedback-form-state');
 }
